@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'todo.apps.TodoConfig',
+    'django_rq',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+RQ_QUEUES = {
+    'default': {
+    'HOST': 'localhost',
+    'PORT': 6379,
+    'DB': 0,
+    }
+}
 
 CACHE_TTL = 60 * 1500
 
